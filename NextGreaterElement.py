@@ -48,16 +48,23 @@ class Solution:
             except ValueError:
                 index_in_other_array = self.NOT_EXISTS
             
-            greater_or_not_exists = self.__getNextGreaterElementFromSecond(index_in_other_array,i)
+            greater_or_not_exists = self.__getNextGreaterElementFromSecondNext(index_in_other_array,i)
             self.__output.append(greater_or_not_exists)
             
-    def __getNextGreaterElementFromSecond(self,index,element_value):          
+    def __getNextGreaterElementFromSecondLoop(self,index,element_value):          
         if index == self.NOT_EXISTS:
             return self.NOT_EXISTS
         for i in self.__numbers_second[index:]: 
-            next = self.NOT_EXISTS
+            next_greater_element = self.NOT_EXISTS
             if i > element_value: 
-                next = i 
+                next_greater_element = i 
                 break
-        return next
+        return next_greater_element
+    
+    def __getNextGreaterElementFromSecondNext(self,index,element_value):          
+        if index == self.NOT_EXISTS:
+            return self.NOT_EXISTS
+        next_greater_element = next((i for i in self.__numbers_second[index:] if i > element_value), self.NOT_EXISTS)
+
+        return next_greater_element
     
