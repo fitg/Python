@@ -18,6 +18,18 @@
 #Note:
 #All elements in nums1 and nums2 are unique.
 #The length of both nums1 and nums2 would not exceed 1000.
+#Test cases:
+#[4,1,2]
+#[1,3,4,2]
+#
+#[2,4]
+#[1,2,3,4]
+#
+#[2,3]
+#[1,2,4,5,6,7]
+#
+#[3,33,12,13,35,1,5,6,7,78,65]
+#[65,3,33,54,432,45,13,5,6,7,1,77,65]
 
 class Solution:
     NOT_EXISTS = -1
