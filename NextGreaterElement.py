@@ -51,10 +51,10 @@ class Solution:
             greater_or_not_exists = self.__getNextGreaterElementFromSecond(index_in_other_array,i)
             self.__output.append(greater_or_not_exists)
             
-    def __getNextGreaterElementFromSecond(self,index_in_other_array,element_value):          
-        if index_in_other_array == self.NOT_EXISTS:
+    def __getNextGreaterElementFromSecond(self,index,element_value):          
+        if index == self.NOT_EXISTS:
             return self.NOT_EXISTS
-        for i in self.__numbers_second[index_in_other_array:]: 
+        for i in self.__numbers_second[index:]: 
             next = self.NOT_EXISTS
             if i > element_value: 
                 next = i 
