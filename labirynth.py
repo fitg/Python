@@ -131,12 +131,12 @@ class SearchStrategyBFS:
         self._prepare_tracking(start)
 
         # algorithm loop
-        while self.queue != []:
+        while self.queue:
             u = self.queue.pop(0)
             self._review_and_append_forbidden_symbols(goal)
             neighbours = self.map_utils.get_valid_neighbours(self.game_map,self.forbidden_symbols,u)
             for n in neighbours:
-                if self.reviewed[n[0]][n[1]] == False:
+                if not self.reviewed[n[0]][n[1]]:
                     self._mark_reviewed(u,n)
                     self.queue.append(n)
                     if self.game_map[n[0]][n[1]] == goal:
