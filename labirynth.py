@@ -20,7 +20,6 @@
 import sys
 import math
 
-INFINITY = float('inf')
 BFS = 1
 
 # quick debug method as codingame does not display stdout
@@ -34,9 +33,7 @@ class Game:
     def get_destination(self, start, back):
         if not back:
             go_to = self.strategy.search(start, '?')
-            if go_to == None:
-                return self.strategy.search(start, 'C')
-            return go_to
+            return go_to if go_to else self.strategy.search(start, 'C')
         else:
             return self.strategy.search(start, 'T')
 
